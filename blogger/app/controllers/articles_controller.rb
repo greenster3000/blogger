@@ -4,10 +4,13 @@ include ArticlesHelper
 		@articles = Article.all
 	end
 	def show
-		@article = Article.find(params[:id])	
+		@article = Article.find(params[:id])
+		@comment = Comment.new
+		@comment.article_id = @article_id
 	end
 	def new
 		@article = Article.new
+		@comment = Comment.new
 	end
 	def create
 		@article = Article.new(article_params)
